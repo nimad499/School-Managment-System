@@ -1,0 +1,37 @@
+<html>
+  <html>
+    <head>
+      <title>Login</title>
+
+      <link rel="stylesheet" type="text/css" href="/login.css" />
+    </head>
+
+    <body>
+      <h1>Login</h1>
+      <% if (message) { %>
+      <p class="message"><%= message %></p>
+      <% } %>
+      <form method="POST" action="/login">
+        <label>
+          <input type="radio" name="role" value="student" checked /> Student
+        </label>
+        <label>
+          <input type="radio" name="role" value="teacher" /> Teacher
+        </label>
+        <label> <input type="radio" name="role" value="admin" /> Admin </label>
+        <br /><br />
+        <label>
+          National Number:
+          <input type="text" name="national_number" />
+        </label>
+        <br /><br />
+        <label>
+          Password:
+          <input type="password" name="password" />
+        </label>
+        <br /><br />
+        <input type="submit" value="Login" />
+      </form>
+    </body>
+  </html>
+</html>

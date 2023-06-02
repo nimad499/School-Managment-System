@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <title>Admin</title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  </head>
+
+  <body>
+    <%- include('../Partials/adminDashboardSidePanel.ejs') %>
+
+    <div class="content">
+      <h1>Remove Course</h1>
+
+      <% if (message) { %>
+      <p class="message">Course not found</p>
+      <% } %> <% if (course) { %>
+      <p class="success">Course <%= course.name %> removed.</p>
+      <% } %>
+
+      <form action="/admin/dashboard/removeCourse" method="post">
+        <label> Course ID<input type="text" name="courseID" /> </label>
+        <input type="submit" value="Search" />
+      </form>
+
+      <% if (course) { %>
+      <p>Name : <%= course.name %></p>
+      <p>
+        Teacher : <%= course.teacher.first_name %> <%= course.teacher.last_name
+        %>
+      </p>
+      <p>Course ID : <%= course.courseID %></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i=0; i < course.scores.length; i++) { %>
+          <td>
+            <%= course.scores[i].student.first_name %> <%=
+            course.scores[i].student.last_name %>
+          </td>
+          <td><%= course.scores[i].score %></td>
+          <% } %>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+  </body>
+</html>

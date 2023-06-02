@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        <%= student.first_name %>
+        <%= student.last_name %>
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css">
+</head>
+
+<body>
+
+    <%- include('../Partials/studentDashboardSidePanel.ejs') %>
+    
+    <div class="content">
+        <p>FirstName : <%= student.first_name %> </p>
+        <p>LastName : <%= student.last_name %> </p>
+        <p>National Number : <%= student.national_number %></p>
+        <p>Gender : <%= student.gender %> </p>
+        <p>Guardian Name : <%= student.guardian_name %> </p>
+    </div>
+
+</body>
+
+</html>

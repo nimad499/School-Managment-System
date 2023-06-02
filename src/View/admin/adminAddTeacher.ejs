@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <title>Admin</title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  </head>
+
+  <body>
+    <%- include('../Partials/adminDashboardSidePanel.ejs') %>
+
+    <div class="content">
+      <h1>Add Teacher</h1>
+
+      <% if (message) { %>
+      <p class="message"><%= message %></p>
+      <% } %> <% if (teacher) { %>
+      <p class="success">
+        Teacher <%= teacher.first_name %> <%= teacher.last_name %> created.
+      </p>
+      <% } %>
+
+      <form action="/admin/dashboard/addTeacher" method="post">
+        <label> FirstName <input type="text" name="first_name" /> </label>
+        <br /><br />
+        <label> LastName <input type="text" name="last_name" /> </label>
+        <br /><br />
+        <label>
+          National Number <input type="text" name="national_number" />
+        </label>
+        <br /><br />
+        <label> Password <input type="text" name="password" /> </label>
+        <br /><br />
+        <input type="submit" value="Add" />
+      </form>
+    </div>
+  </body>
+</html>

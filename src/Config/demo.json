@@ -1,0 +1,3 @@
+{
+  "database_URI": "mongodb://127.0.0.1:27017/School_Management_System_Demo"
+}

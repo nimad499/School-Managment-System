@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <title>Admin</title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  </head>
+
+  <body>
+    <%- include('../Partials/adminDashboardSidePanel.ejs') %>
+
+    <div class="content">
+      <h1>Get Teacher</h1>
+
+      <% if (message) { %>
+      <p class="message">Teacher not found</p>
+      <% } %>
+
+      <form action="/admin/dashboard/getTeacher" method="post">
+        <label>
+          National Number <input type="text" name="national_number" />
+        </label>
+        <input type="submit" value="Search" />
+      </form>
+
+      <% if (teacher) { %>
+      <p>FirstName : <%= teacher.first_name %></p>
+      <p>LastName : <%= teacher.last_name %></p>
+      <p>National Number : <%= teacher.national_number %></p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Course Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i=0; i < teacher.courses.length; i++) { %>
+          <td><%= teacher.courses[i].name %></td>
+          <% } %>
+        </tbody>
+      </table>
+      <% } %>
+    </div>
+  </body>
+</html>

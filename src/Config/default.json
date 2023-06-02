@@ -1,0 +1,5 @@
+{
+  "serverPort": 3000,
+  "database_URI": "mongodb://127.0.0.1:27017/School_Management_System",
+  "TOKEN_KEY":"udzEcOybDN0uAN1W6elbZ8d-T67Bl3H5n=?Y=/l!o?TtW646yXFTtu9BIcn3q0KJ"
+}

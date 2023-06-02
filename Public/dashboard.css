@@ -1,0 +1,150 @@
+.side-panel {
+  width: 200px;
+  height: 100%;
+  background-color: #f1f1f1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.content {
+  margin-left: 200px;
+  padding: 20px;
+  max-width: 600px;
+}
+
+.side-panel a,
+.side-panel button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.side-panel a:hover,
+.side-panel button:hover {
+  background-color: #45a049;
+}
+
+.side-panel h2 {
+  padding-left: 10px;
+}
+
+.content p {
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+.collapsible {
+  background-color: transparent;
+  border: none;
+  text-align: left;
+  padding: 8px 16px;
+  outline: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.collapsible:hover {
+  background-color: #ddd;
+}
+
+.sub {
+  max-height: 0;
+  padding: 0 18px;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+}
+
+.active {
+  background-color: #ddd;
+}
+
+.active+.content {
+  max-height: 500px;
+  /* Adjust the value to accommodate your content */
+  transition: max-height 0.3s ease-in;
+}
+
+.sub a {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input[type="radio"] {
+  margin-right: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+  border: 1px solid #ff0000;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 20px auto;
+}
+
+.success {
+  color: #00a60e;
+  font-size: 14px;
+  margin-top: 5px;
+  border: 1px solid #00a60e;
+  padding: 5px;
+  border-radius: 4px;
+  margin: 20px auto;
+}

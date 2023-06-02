@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title><%= teacher.first_name %> <%= teacher.last_name %></title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  </head>
+
+  <body>
+    <%- include('../Partials/teacherDashboardSidePanel.ejs') %>
+
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Course ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i=0; i < teacher.courses.length; i++) { %>
+          <td><%= teacher.courses[i].name %></td>
+          <td><%= teacher.courses[i].courseID %></td>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

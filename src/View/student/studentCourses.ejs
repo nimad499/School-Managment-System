@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <title><%= student.first_name %> <%= student.last_name %></title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  </head>
+
+  <body>
+    <%- include('../Partials/studentDashboardSidePanel.ejs') %>
+
+    <div class="content">
+      <table>
+        <thead>
+          <tr>
+            <th>Course Name</th>
+            <th>Teacher</th>
+            <th>Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (var i=0; i < student.courses.length; i++) { %>
+          <td><%= student.courses[i].name %></td>
+          <td>
+            <%= student.courses[i].teacher.first_name %> <%=
+            student.courses[i].teacher.last_name %>
+          </td>
+          <td><%= student.courses[i].score %></td>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<div class="side-panel">
+  <h2>Dashboard</h2>
+
+  <button class="collapsible">Students</button>
+  <div class="sub">
+    <a href="/admin/dashboard/addStudent">Add Student</a>
+    <a href="/admin/dashboard/removeStudent">Remove Student</a>
+    <a href="/admin/dashboard/getStudent">Get Student</a>
+  </div>
+
+  <button class="collapsible">Teachers</button>
+  <div class="sub">
+    <a href="/admin/dashboard/addTeacher">Add Teacher</a>
+    <a href="/admin/dashboard/removeTeacher">Remove Teacher</a>
+    <a href="/admin/dashboard/getTeacher">Get Teacher</a>
+  </div>
+
+  <button class="collapsible">Courses</button>
+  <div class="sub">
+    <a href="/admin/dashboard/addCourse">Add Course</a>
+    <a href="/admin/dashboard/removeCourse">Remove Course</a>
+    <a href="/admin/dashboard/getCourse">Get Course</a>
+    <a href="/admin/dashboard/enrollStudent">Enroll Student</a>
+  </div>
+</div>
+
+<script>
+  var collapsibleButtons = document.getElementsByClassName("collapsible");
+
+  for (var i = 0; i < collapsibleButtons.length; i++) {
+    collapsibleButtons[i].addEventListener("click", function () {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+      }
+    });
+  }
+</script>

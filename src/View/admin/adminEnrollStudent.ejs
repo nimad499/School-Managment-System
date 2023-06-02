@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Admin</title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  </head>
+
+  <body>
+    <%- include('../Partials/adminDashboardSidePanel.ejs') %>
+
+    <div class="content">
+      <h1>Enroll Student</h1>
+
+      <% if (message) { %>
+      <p class="message"><%= message %></p>
+      <% } %> <% if (student && course) { %>
+      <p class="success">
+        <%= student.first_name %> <%= student.last_name %> was successfully
+        enrolled in <%= course.name %> class.
+      </p>
+      <% } %>
+
+      <form action="/admin/dashboard/enrollStudent" method="post">
+        <label> Course ID <input type="text" name="courseID" /> </label>
+        <br /><br />
+        <label>
+          Student (national Number)
+          <input type="text" name="national_number" />
+        </label>
+        <br /><br />
+        <input type="submit" value="Enroll" />
+      </form>
+    </div>
+  </body>
+</html>

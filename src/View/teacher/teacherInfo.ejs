@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title><%= teacher.first_name %> <%= teacher.last_name %></title>
+
+    <link rel="stylesheet" type="text/css" href="/dashboard.css" />
+  </head>
+
+  <body>
+    <%- include('../Partials/teacherDashboardSidePanel.ejs') %>
+
+    <div class="content">
+      <p>FirstName : <%= teacher.first_name %></p>
+      <p>LastName : <%= teacher.last_name %></p>
+      <p>National Number : <%= teacher.national_number %></p>
+    </div>
+  </body>
+</html>
